@@ -33,7 +33,7 @@ def predict_with_cnn(file_name):
     print(file_name)
 
     # Load the trained model
-    model = load_model('models/VGG_freeze_shape.h5')
+    model = load_model('CNN_model.h5')
 
 
     class_names = ["angry","happy","ahegao","sad","neutral","surprise",]       

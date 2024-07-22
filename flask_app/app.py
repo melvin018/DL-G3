@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 from flask import Flask, request, jsonify
 from tensorflow.keras.models import load_model
+from tensorflow.keras import layers, models
 import tensorflow as tf
 
 app = Flask(__name__)
@@ -33,10 +34,10 @@ def predict_with_cnn(file_name):
     print(file_name)
 
     # Load the trained model
-    model = load_model('models/VGG_freeze_shape.h5')
+    model = models.load_model('models/VGG_freeze.h5')
 
 
-    class_names = ["angry","happy","ahegao","sad","neutral","surprise",]       
+    class_names = ["angry","happy","ahegao","sad","neutral","surprise"]       
     
     # Process the image and make predictions
     image_size = (64,64)
